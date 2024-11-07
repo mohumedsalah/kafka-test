@@ -1,12 +1,13 @@
 package com.cyshield.Partition;
 
+import com.cyshield.Partition.configration.KafkaConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.kafka.core.KafkaTemplate;
 
 public class Sender {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(KafkaConfig.class);
         context.getBean(Sender.class).send("Hello from the other side 2", 42);
     }
 

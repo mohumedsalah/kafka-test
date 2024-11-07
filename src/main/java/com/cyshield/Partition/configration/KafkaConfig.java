@@ -1,5 +1,7 @@
-package com.cyshield.Partition;
+package com.cyshield.Partition.configration;
 
+import com.cyshield.Partition.Listener;
+import com.cyshield.Partition.Sender;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.IntegerDeserializer;
@@ -17,7 +19,7 @@ import java.util.Map;
 
 @Configuration
 @EnableKafka
-public class Config {
+public class KafkaConfig {
 
     @Bean
     ConcurrentKafkaListenerContainerFactory<Integer, String>
@@ -44,10 +46,7 @@ public class Config {
         return props;
     }
 
-    @Bean
-    public Sender sender(KafkaTemplate<Integer, String> template) {
-        return new Sender(template);
-    }
+
 
     @Bean
     public Listener listener() {
