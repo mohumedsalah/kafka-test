@@ -21,6 +21,8 @@ public class ListenerConfig {
 
     @KafkaListener(id = "myId", topics = "topic1")
     public void listen(String in) {
+
+        // TODO process single Item
         System.out.println("Received message:" + in);
     }
 }

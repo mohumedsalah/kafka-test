@@ -1,7 +1,5 @@
 package com.cyshield.Partition.configration;
 
-import com.cyshield.Partition.Listener;
-import com.cyshield.Partition.Sender;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.IntegerDeserializer;
@@ -48,10 +46,6 @@ public class KafkaConfig {
 
 
 
-    @Bean
-    public Listener listener() {
-        return new Listener();
-    }
 
     @Bean
     public ProducerFactory<Integer, String> producerFactory() {
